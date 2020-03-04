@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appdynamics-agent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <controller host="NNNN.NNNNN.saas.appdynamics.com" port="443" ssl="true" enable_tls12="true">
+    <application name="DDR_CTEST_1" />
+    <account name="NNN-NNNNN" password="NNNNNNN" />
+  </controller>
+  <machine-agent />
+  <app-agents>
+    <IIS>
+      <applications />
+    </IIS>
+    <standalone-applications>
+      <standalone-application executable="N1.exe">
+        <tier name="N1-TIER1" />
+      </standalone-application>
+
+      <standalone-application executable="C-TEST-APP-1.exe" controller-application="DDR_CTEST_1">
+        <tier name="T1-TIER1" />
+      </standalone-application>
+
+    </standalone-applications>
+  </app-agents>
+</appdynamics-agent>
