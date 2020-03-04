@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Threading;
 
+// Maintainer: David Ryder
+// Example C# .NET Console Application and AppDynamics BT Detection Rules
+
 namespace CTESTAPP1
 {
     // Define the interface Adds
