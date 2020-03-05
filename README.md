@@ -15,5 +15,9 @@ An AppDynamics   .Net agent config.xml is included.
 # BT Detection on Classes that implement the interface CTESTAPP1.Adds, with the BTs being named using the full class and method name
 ![Adds1](BT-Rules/Adds1.png)
 
+# BT Detection on Classes and Methods that start with Response and Success respectively, with the BTs being named using simple class and method name
+
+![Response](BT-Rules/Response.png)
+
 # BT Detected using the above rules
 ![BT-Detected](BT-Rules/BT-Detected.png)
