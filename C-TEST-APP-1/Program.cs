@@ -14,8 +14,55 @@ namespace CTESTAPP1
         int add3(int total, int i);
     }
 
+    // Generic Class
+    class Response1<T>
+    {
+        public void Success<U>(U v)
+        {
+            Console.WriteLine($"Response1.Success {v}");
+
+        }
+    }
+
+    // Generic Class with return value
+    class Response2<T>
+    {
+        public U Success<U>(U v)
+        {
+            Console.WriteLine($"Response2.Success {v}");
+            return v;
+        }
+    }
+
+    class Test1
+    {
+         public void test(int v)
+         {
+            Console.WriteLine($"Test1.test {v}");
+         }
+    } 
+
     class MainClass
     {
+
+        // Generic Class - Repeating Class in MainClass
+        class Response3<T>
+        {
+            public void Success<U>(U v)
+            {
+                Console.WriteLine($"Response11.Success {v}");
+
+            }
+        }
+
+        class Test1
+        {
+            public void test(int v)
+            {
+                Console.WriteLine($"Test1.test {v}");
+            }
+        }
+
         // Implement the class CTESTAPP1.MainClass.theAdds1 using interface defined by Adds
         class theAdds1 : Adds
         {
@@ -75,6 +122,13 @@ namespace CTESTAPP1
         {
             theAdds1 ta1 = new theAdds1();
             theAdds2 ta2 = new theAdds2();
+
+            Response1<int> r11 = new CTESTAPP1.Response1<int>();
+            Response1<string> r12 = new CTESTAPP1.Response1<string>();
+
+            Response2<int> r21 = new CTESTAPP1.Response2<int>();
+            Response2<string> r22 = new CTESTAPP1.Response2<string>();
+
             int total = 0;
             int count = 10000;
             for (int i=0;i<count;i++)
@@ -90,6 +144,12 @@ namespace CTESTAPP1
                 int t6 = ta2.add1(total, i);
                 int t7 = ta2.add2(total, i);
                 int t8 = ta2.add3(total, i);
+
+                r11.Success<int>(i);
+                r12.Success<string>(i.ToString());
+
+                int v1 = r21.Success<int>(i);
+                string v2 = r22.Success<string>(i.ToString());
 
                 int t = t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8;
                 Console.WriteLine($"Total: {i} {total} {t}");
